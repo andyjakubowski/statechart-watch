@@ -1,5 +1,7 @@
+import WatchCase from './Watch';
+
 function App() {
-  return <div>Hello</div>;
+  return <WatchCase />;
 }
 
 export default App;
