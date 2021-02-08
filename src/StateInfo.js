@@ -31,7 +31,7 @@ const StateInfo = function StateInfo({ state }) {
       <div className={cn('state-info-section')}>
         <h3 className={cn('state-info-heading')}>Active states</h3>
         <div className={cn('state-info-states')}>
-          {state.toStrings().join('\n')}
+          {state.toStrings().sort().join('\n')}
         </div>
       </div>
       <div className={cn('state-info-section')}>
