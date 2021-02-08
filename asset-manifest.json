@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/statechart-watch/static/css/main.6dea0f05.chunk.css",
+    "main.js": "/statechart-watch/static/js/main.cef3e97f.chunk.js",
+    "main.js.map": "/statechart-watch/static/js/main.cef3e97f.chunk.js.map",
+    "runtime-main.js": "/statechart-watch/static/js/runtime-main.d526c723.js",
+    "runtime-main.js.map": "/statechart-watch/static/js/runtime-main.d526c723.js.map",
+    "static/js/2.ee1f6bca.chunk.js": "/statechart-watch/static/js/2.ee1f6bca.chunk.js",
+    "static/js/2.ee1f6bca.chunk.js.map": "/statechart-watch/static/js/2.ee1f6bca.chunk.js.map",
+    "static/js/3.5c025de8.chunk.js": "/statechart-watch/static/js/3.5c025de8.chunk.js",
+    "static/js/3.5c025de8.chunk.js.map": "/statechart-watch/static/js/3.5c025de8.chunk.js.map",
+    "index.html": "/statechart-watch/index.html",
+    "static/css/main.6dea0f05.chunk.css.map": "/statechart-watch/static/css/main.6dea0f05.chunk.css.map",
+    "static/js/2.ee1f6bca.chunk.js.LICENSE.txt": "/statechart-watch/static/js/2.ee1f6bca.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d526c723.js",
+    "static/js/2.ee1f6bca.chunk.js",
+    "static/css/main.6dea0f05.chunk.css",
+    "static/js/main.cef3e97f.chunk.js"
+  ]
+}
