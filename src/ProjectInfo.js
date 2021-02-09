@@ -27,8 +27,8 @@ const ProjectInfo = function ProjectInfo() {
           <a href="https://statecharts.github.io/what-is-a-statechart.html">
             statecharts
           </a>
-          .
         </p>
+        <p>Use with the on-screen buttons or your keyboard</p>
         <p>
           Built with <a href="https://xstate.js.org/docs/">XState</a> &{' '}
           <a href="https://create-react-app.dev/">React</a> by{' '}
