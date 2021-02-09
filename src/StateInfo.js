@@ -12,6 +12,17 @@ const formatContextObject = (function makeFormatContextObject() {
   };
 })();
 
+const removeAlivePrefix = (function makeRemoveAlivePrefix() {
+  const alivePrefixLength = 'alive.'.length;
+  return function removeAlivePrefix(string) {
+    if (string === 'alive') {
+      return undefined;
+    }
+
+    return string.slice(alivePrefixLength);
+  };
+})();
+
 const StateInfo = function StateInfo({ state }) {
   const { context } = state;
   const { T, T1, T2, stopwatch, ...rest } = context;
@@ -31,7 +42,7 @@ const StateInfo = function StateInfo({ state }) {
       <div className={cn('state-info-section')}>
         <h3 className={cn('state-info-heading')}>Active states</h3>
         <div className={cn('state-info-states')}>
-          {state.toStrings().sort().join('\n')}
+          {state.toStrings().map(removeAlivePrefix).sort().join('\n')}
         </div>
       </div>
       <div className={cn('state-info-section')}>
