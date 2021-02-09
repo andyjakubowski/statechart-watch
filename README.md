@@ -1,6 +1,8 @@
 # Citizen Quartz Multi Alarm III
 
-A pretty exact replica of the Citizen Quartz Multi Alarm III watch based on figure 31 in David Harel’s 1987 paper introducing statecharts.
+Check out the live demo at https://andyjakubowski.github.io/statechart-watch/
+
+A pretty exact replica of the Citizen Quartz Multi Alarm III watch based on figure 31 in David Harel’s 1987 [paper](https://www.sciencedirect.com/science/article/pii/0167642387900359) introducing statecharts.
 
 ![Overview of the watch](src/assets/readme/intro.gif)
 ![Figure 31 from Harel’s paper](src/assets/figure_31.png)
@@ -13,7 +15,7 @@ Awesome overall intro to statecharts: [https://statecharts.github.io/](https://s
 
 [XState](https://xstate.js.org), a JavaScript framework that implements statecharts
 
-[More about the watch](https://whichwatchtoday.blogspot.com/2013/02/citizen-quartz-multi-alarm-iii-41-3534.html)
+[Citizen Quartz Multi Alarm III 41-3534](https://whichwatchtoday.blogspot.com/2013/02/citizen-quartz-multi-alarm-iii-41-3534.html)
 
 # Usage
 
