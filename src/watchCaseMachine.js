@@ -211,7 +211,7 @@ const watchMachine = createMachine(
     initial: 'alive',
     context: {
       T: {
-        sec: 55,
+        sec: 50,
         oneMin: 9,
         tenMin: 5,
         hr: 11,
