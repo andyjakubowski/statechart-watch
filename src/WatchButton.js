@@ -4,8 +4,9 @@ const WatchButton = (function makeWatchButton() {
   const types = ['a', 'b', 'c', 'd'];
   const events = types.reduce((result, type) => {
     result[type] = {
-      mouseDown: `${type.toUpperCase()}_PRESSED`,
-      mouseUp: `${type.toUpperCase()}_RELEASED`,
+      pointerDown: `${type.toUpperCase()}_PRESSED`,
+      pointerUp: `${type.toUpperCase()}_RELEASED`,
+      pointerCancel: `${type.toUpperCase()}_RELEASED`,
     };
     return result;
   }, {});
@@ -13,8 +14,9 @@ const WatchButton = (function makeWatchButton() {
   return function WatchButton({ type, send, children: label }) {
     return (
       <button
-        onMouseDown={() => send(events[type].mouseDown)}
-        onMouseUp={() => send(events[type].mouseUp)}
+        onPointerDown={() => send(events[type].pointerDown)}
+        onPointerUp={() => send(events[type].pointerUp)}
+        onPointerCancel={() => send(events[type].pointerCancel)}
         className={cn(`button-${type}`)}
       >
         {label}
