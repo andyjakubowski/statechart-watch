@@ -75,7 +75,7 @@ a {
   }
 
   &__description {
-    width: 300px;
+    width: unquote('min(90vw, 400px)');
     text-align: center;
     line-height: 1.4375;
     display: grid;
@@ -532,11 +532,6 @@ a {
       grid-template-columns: var(--columns_small);
       grid-template-rows: var(--rows_small);
       grid-template-areas: var(--areas_small);
-    }
-
-    &__description {
-      width: 300px;
-      text-align: center;
     }
   }
 }
