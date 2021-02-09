@@ -232,6 +232,10 @@ a {
     line-height: 92px;
 
     cursor: pointer;
+    --user-select: none;
+    -webkit-user-select: var(--user-select);
+    -ms-user-select: var(--user-select);
+    user-select: var(--user-select);
 
     &:hover {
       background-color: hsla(240, 3%, 70%, 0.1);
@@ -433,6 +437,11 @@ a {
 
     display: flex;
     justify-content: center;
+
+    --user-select: none;
+    -webkit-user-select: var(--user-select);
+    -ms-user-select: var(--user-select);
+    user-select: var(--user-select);
   }
 
   &__battery-button {
