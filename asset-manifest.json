@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/statechart-watch/static/css/main.ac0ff5f8.chunk.css",
-    "main.js": "/statechart-watch/static/js/main.906f6e82.chunk.js",
-    "main.js.map": "/statechart-watch/static/js/main.906f6e82.chunk.js.map",
+    "main.css": "/statechart-watch/static/css/main.2d468a92.chunk.css",
+    "main.js": "/statechart-watch/static/js/main.6d3c353c.chunk.js",
+    "main.js.map": "/statechart-watch/static/js/main.6d3c353c.chunk.js.map",
     "runtime-main.js": "/statechart-watch/static/js/runtime-main.1422b804.js",
     "runtime-main.js.map": "/statechart-watch/static/js/runtime-main.1422b804.js.map",
     "static/js/2.f20ea641.chunk.js": "/statechart-watch/static/js/2.f20ea641.chunk.js",
@@ -10,7 +10,7 @@
     "static/js/3.bb4e5a0f.chunk.js": "/statechart-watch/static/js/3.bb4e5a0f.chunk.js",
     "static/js/3.bb4e5a0f.chunk.js.map": "/statechart-watch/static/js/3.bb4e5a0f.chunk.js.map",
     "index.html": "/statechart-watch/index.html",
-    "static/css/main.ac0ff5f8.chunk.css.map": "/statechart-watch/static/css/main.ac0ff5f8.chunk.css.map",
+    "static/css/main.2d468a92.chunk.css.map": "/statechart-watch/static/css/main.2d468a92.chunk.css.map",
     "static/js/2.f20ea641.chunk.js.LICENSE.txt": "/statechart-watch/static/js/2.f20ea641.chunk.js.LICENSE.txt",
     "static/media/Watch.scss": "/statechart-watch/static/media/DigitalDismay-VAKw.8a8838f3.ttf",
     "static/media/alarm_1.40c2d775.svg": "/statechart-watch/static/media/alarm_1.40c2d775.svg",
@@ -34,7 +34,7 @@
   "entrypoints": [
     "static/js/runtime-main.1422b804.js",
     "static/js/2.f20ea641.chunk.js",
-    "static/css/main.ac0ff5f8.chunk.css",
-    "static/js/main.906f6e82.chunk.js"
+    "static/css/main.2d468a92.chunk.css",
+    "static/js/main.6d3c353c.chunk.js"
   ]
 }
