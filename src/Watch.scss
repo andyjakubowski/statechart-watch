@@ -35,7 +35,7 @@ a {
       'state-info' 'fig-31';
 
     --min-height_default: 100vh;
-    --columns_default: 480px min(72px, 3vw) 1fr;
+    --columns_default: 430px min(72px, 3vw) 1fr;
     --rows_default: auto 132px auto auto 1fr auto auto;
     --areas_default: 'project-info project-info project-info project-info'
       'state-info . beep .' 'state-info . face-and-buttons .'
@@ -44,7 +44,7 @@ a {
     --row-gap_default: 24px;
 
     --rows_large: 132px auto auto 1fr auto auto;
-    --columns_large: 0.7fr 480px min(72px, 3vw) max-content 1fr;
+    --columns_large: 0.7fr 430px min(72px, 3vw) max-content 1fr;
     --areas_large: '. state-info . beep .' '. state-info . face-and-buttons .'
       '. state-info . battery-button .' '. state-info . . . '
       'fig-31 fig-31 fig-31 fig-31 fig-31';
@@ -517,7 +517,7 @@ a {
   }
 }
 
-@media screen and (max-width: 70em) {
+@media screen and (max-width: 63em) {
   .Watch {
     &__container {
       grid-template-columns: var(--columns_small);
