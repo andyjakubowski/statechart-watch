@@ -1,5 +1,5 @@
 import { createMachine, actions } from 'xstate';
-const { assign, send, pure, log } = actions;
+const { assign, send, pure } = actions;
 
 const seconds = function seconds(num) {
   return num * 1000;
