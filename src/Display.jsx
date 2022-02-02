@@ -1,34 +1,23 @@
 import React from 'react';
 import cn from './classNames';
-import colon from './assets/colon.svg';
-import period from './assets/period.svg';
-import prime from './assets/prime.svg';
-import doublePrime from './assets/double_prime.svg';
-import weakBattery from './assets/weak_battery.svg';
-import am from './assets/am.svg';
-import pm from './assets/pm.svg';
 
 const Colon = function Colon() {
-  return <img className={cn('colon-icon')} src={colon} alt="Colon" />;
+  return <img className={cn('colon-icon')} src={'/assets/colon.svg'} alt="Colon" />;
 };
 
 const WeakBattery = function WeakBattery() {
   return (
-    <img
-      className={cn('weak-battery-icon')}
-      src={weakBattery}
-      alt="Weak battery"
-    />
+    <img className={cn('weak-battery-icon')} src={'/assets/weak_battery.svg'} alt="Weak battery" />
   );
 };
 
 const Primes = function Primes() {
   return (
     <>
-      <img className={cn('prime-icon')} src={prime} alt="Prime" />
+      <img className={cn('prime-icon')} src={'/assets/prime.svg'} alt="Prime" />
       <img
         className={cn('double-prime-icon')}
-        src={doublePrime}
+        src={'/assets/double_prime.svg'}
         alt="Double prime"
       />
     </>
@@ -36,15 +25,15 @@ const Primes = function Primes() {
 };
 
 const Period = function Period() {
-  return <img className={cn('period-icon')} src={period} alt="Period" />;
+  return <img className={cn('period-icon')} src={'/assets/period.svg'} alt="Period" />;
 };
 
 const AM = function AM() {
-  return <img className={cn('am-icon')} src={am} alt="AM symbol" />;
+  return <img className={cn('am-icon')} src={'/assets/am.svg'} alt="AM symbol" />;
 };
 
 const PM = function PM() {
-  return <img className={cn('pm-icon')} src={pm} alt="PM symbol" />;
+  return <img className={cn('pm-icon')} src={'/assets/pm.svg'} alt="PM symbol" />;
 };
 
 const Digits1 = function Digits1({ children }) {
@@ -212,29 +201,20 @@ const ModeUpdateDisplay = function ModeUpdateDisplay({ state, updateState }) {
 };
 
 const UpdateDisplay = function UpdateDisplay({ state }) {
-  const states = [
-    'sec',
-    '1min',
-    '10min',
-    'hr',
-    'mon',
-    'date',
-    'day',
-    'year',
-    'mode',
-  ].reduce((result, key) => {
-    result[key] = `alive.main.displays.regularAndBeep.regular.update.${key}`;
-    return result;
-  }, {});
+  const states = ['sec', '1min', '10min', 'hr', 'mon', 'date', 'day', 'year', 'mode'].reduce(
+    (result, key) => {
+      result[key] = `alive.main.displays.regularAndBeep.regular.update.${key}`;
+      return result;
+    },
+    {}
+  );
   const updateTypes = {
     time: ['sec', '1min', '10min', 'hr'],
     date: ['mon', 'date', 'day'],
     year: ['year'],
     mode: ['mode'],
   };
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
   const currentUpdateType = Object.keys(updateTypes).find((key) =>
     updateTypes[key].includes(currentState)
   );
@@ -258,9 +238,7 @@ const AlarmDisplay = function AlarmDisplay({ state, alarmNumber }) {
     on: `alive.main.displays.out.alarm-${alarmNumber}.on`,
     off: `alive.main.displays.out.alarm-${alarmNumber}.off`,
   };
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
   const isEnabled = state.matches(`alive.alarm-${alarmNumber}-status.enabled`);
   const statusLabel = isEnabled ? 'on' : 'of';
   const classNames = Object.keys(states).reduce((result, el) => {
@@ -282,9 +260,7 @@ const AlarmDisplay = function AlarmDisplay({ state, alarmNumber }) {
       </Digits2>
       {PeriodIndicator}
       <Digits3>
-        <span className={classNames['on'] || classNames['off']}>
-          {statusLabel}
-        </span>
+        <span className={classNames['on'] || classNames['off']}>{statusLabel}</span>
       </Digits3>
     </LCD>
   );
@@ -303,9 +279,7 @@ const ChimeDisplay = function ChimeDisplay({ state }) {
     off: 'alive.main.displays.out.chime.off',
     on: 'alive.main.displays.out.chime.on',
   };
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
   const statusLabel = currentState === 'on' ? 'on' : 'of';
 
   return (
@@ -326,9 +300,7 @@ const Regular = function Regular({ state }) {
     update: 'alive.main.displays.regularAndBeep.regular.update',
   };
 
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
 
   const displays = {
     time: <TimeDisplay state={state} />,
@@ -348,9 +320,7 @@ const Out = function Out({ state }) {
     chime: 'alive.main.displays.out.chime',
   };
 
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
 
   const displays = {
     alarm1: <Alarm1Display state={state} />,
@@ -384,9 +354,7 @@ const Stopwatch = function Stopwatch({ state }) {
     regular: 'alive.main.displays.stopwatch.displayAndRun.display.regular',
     lap: 'alive.main.displays.stopwatch.displayAndRun.display.lap',
   };
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
   const shownTime = currentState === 'regular' ? elapsedTotal : lap;
   const { min, sec, hundrethsOfSec } = getTimesFromMs(shownTime);
   const minString = String(min).padStart(2, '0');
@@ -418,9 +386,7 @@ const Display = function Display({ state }) {
     stopwatch: 'alive.main.displays.stopwatch',
   };
 
-  const currentState = Object.keys(states).find((key) =>
-    state.matches(states[key])
-  );
+  const currentState = Object.keys(states).find((key) => state.matches(states[key]));
 
   const displays = {
     regular: <Displays.Regular state={state} />,

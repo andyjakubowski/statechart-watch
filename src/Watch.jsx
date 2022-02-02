@@ -11,8 +11,6 @@ import BeepLabel from './BeepLabel';
 import BatteryButton from './BatteryButton';
 import WatchButton from './WatchButton';
 import Display from './Display';
-import figure31 from './assets/figure_31.png';
-import { ReactComponent as FaceBackground } from './assets/face.svg';
 
 const WatchCase = function WatchCase() {
   const [state, send] = useMachine(watchCaseMachine);
@@ -26,7 +24,7 @@ const WatchCase = function WatchCase() {
       <BatteryButton state={state} send={send} />
       <img
         className={cn('figure-31')}
-        src={figure31}
+        src={'/assets/figure_31.png'}
         alt="Figure 31 from Harel's statecharts paper"
       />
     </div>
@@ -82,9 +80,10 @@ const Face = function Face({ state }) {
 
   return (
     <div className={cn('face')}>
-      <FaceBackground
+      <img
         data-state-light={lightState}
         className={cn('face-background')}
+        src={'/assets/face.svg'}
       />
       <div className={cn('displays')}>
         {elStatusIcons}

@@ -1,9 +1,5 @@
 import React from 'react';
 import cn from './classNames';
-import { ReactComponent as IconAlarm1 } from './assets/alarm_1.svg';
-import { ReactComponent as IconAlarm2 } from './assets/alarm_2.svg';
-import { ReactComponent as IconChime } from './assets/chime.svg';
-import { ReactComponent as IconStopwatch } from './assets/stopwatch.svg';
 
 const timeDisplayStates = [
   'alive.main.displays.regularAndBeep.regular.time',
@@ -25,12 +21,12 @@ const AlarmStatus = function AlarmStatus({ state, alarmNumber, ...props }) {
   const shouldShow =
     state.matches(iconStates.enabled) &&
     (timeDisplayStates.some(state.matches) || state.matches(alarmsBeepState));
-  const Icon = alarmNumber === 1 ? IconAlarm1 : IconAlarm2;
+  const icon = alarmNumber === 1 ? '/assets/alarm_1.svg' : '/assets/alarm_2.svg';
 
   if (shouldBlink) {
-    return <Icon data-state="blinking" {...props} />;
+    return <img data-state="blinking" src={icon} {...props} />;
   } else if (shouldShow) {
-    return <Icon data-state="enabled" {...props} />;
+    return <img data-state="enabled" src={icon} {...props} />;
   } else {
     return '';
   }
@@ -47,10 +43,7 @@ const Alarm2Status = function Alarm2Status({ state, ...props }) {
 const ChimeStatus = function ChimeStatus({ state, ...props }) {
   const iconStates = {
     enabled: 'alive.chime-status.enabled.quiet',
-    blinking: [
-      'alive.chime-status.enabled.beep',
-      'alive.main.displays.out.chime',
-    ],
+    blinking: ['alive.chime-status.enabled.beep', 'alive.main.displays.out.chime'],
   };
   const shouldBlink = iconStates.blinking.some(state.matches);
   const shouldShow =
@@ -58,9 +51,9 @@ const ChimeStatus = function ChimeStatus({ state, ...props }) {
     (timeDisplayStates.some(state.matches) || state.matches(alarmsBeepState));
 
   if (shouldBlink) {
-    return <IconChime data-state="blinking" {...props} />;
+    return <img data-state="blinking" src={'/assets/chime.svg'} {...props} />;
   } else if (shouldShow) {
-    return <IconChime data-state="enabled" {...props} />;
+    return <IconChime data-state="enabled" src={'/assets/chime.svg'} {...props} />;
   } else {
     return '';
   }
@@ -75,13 +68,11 @@ const StopwatchStatus = function StopwatchStatus({ state, ...props }) {
   };
   const shouldBlink = state.matches(iconStates.blinking);
   const shouldShow =
-    isRunning &&
-    (timeDisplayStates.some(state.matches) || state.matches(alarmsBeepState));
-
+    isRunning && (timeDisplayStates.some(state.matches) || state.matches(alarmsBeepState));
   if (shouldBlink) {
-    return <IconStopwatch data-state="blinking" {...props} />;
+    return <img data-state="blinking" src={'/assets/stopwatch.svg'} {...props} />;
   } else if (shouldShow) {
-    return <IconStopwatch data-state="enabled" {...props} />;
+    return <img data-state="enabled" src={'/assets/stopwatch.svg'} {...props} />;
   } else {
     return '';
   }

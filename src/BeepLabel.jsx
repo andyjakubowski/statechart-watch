@@ -1,5 +1,3 @@
-import beepText from './assets/beep_text.svg';
-import beepLines from './assets/beep_lines.svg';
 import cn from './classNames';
 
 const BeepLabel = function BeepLabel({ state }) {
@@ -14,8 +12,8 @@ const BeepLabel = function BeepLabel({ state }) {
 
   return (
     <div data-state-beep={dataStateBeep} className={cn('beep-container')}>
-      <img className={cn('beep-text')} src={beepText} alt="Beep text" />
-      <img className={cn('beep-lines')} src={beepLines} alt="Beep lines" />
+      <img className={cn('beep-text')} src={'/assets/beep_text.svg'} alt="Beep text" />
+      <img className={cn('beep-lines')} src={'/assets/beep_lines.svg'} alt="Beep lines" />
     </div>
   );
 };
