@@ -53,7 +53,7 @@ const ChimeStatus = function ChimeStatus({ state, ...props }) {
   if (shouldBlink) {
     return <img data-state="blinking" src={'/assets/chime.svg'} {...props} />;
   } else if (shouldShow) {
-    return <IconChime data-state="enabled" src={'/assets/chime.svg'} {...props} />;
+    return <img data-state="enabled" src={'/assets/chime.svg'} {...props} />;
   } else {
     return '';
   }
