@@ -235,8 +235,8 @@ const AlarmDisplay = function AlarmDisplay({ state, alarmNumber }) {
     '1min': `alive.main.displays.out.update-${alarmNumber}.1min`,
     '10min': `alive.main.displays.out.update-${alarmNumber}.10min`,
     hr: `alive.main.displays.out.update-${alarmNumber}.hr`,
-    on: `alive.main.displays.out.alarm-${alarmNumber}.on`,
-    off: `alive.main.displays.out.alarm-${alarmNumber}.off`,
+    on: `alive.alarm-${alarmNumber}-status.enabled`,
+    off: `alive.alarm-${alarmNumber}-status.disabled`,
   };
   const currentState = Object.keys(states).find((key) => state.matches(states[key]));
   const isEnabled = state.matches(`alive.alarm-${alarmNumber}-status.enabled`);
@@ -276,8 +276,8 @@ const Alarm2Display = function Alarm2Display({ alarmNumber, ...props }) {
 
 const ChimeDisplay = function ChimeDisplay({ state }) {
   const states = {
-    off: 'alive.main.displays.out.chime.off',
-    on: 'alive.main.displays.out.chime.on',
+    off: 'alive.chime-status.disabled',
+    on: 'alive.chime-status.enabled',
   };
   const currentState = Object.keys(states).find((key) => state.matches(states[key]));
   const statusLabel = currentState === 'on' ? 'on' : 'of';

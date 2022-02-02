@@ -242,7 +242,7 @@ const watchMachine = createMachine(
                 on: {
                   D_PRESSED: {
                     target: 'enabled',
-                    in: '#watch.alive.main.displays.out.alarm-1.off',
+                    in: '#alarm-1',
                   },
                 },
               },
@@ -250,7 +250,7 @@ const watchMachine = createMachine(
                 on: {
                   D_PRESSED: {
                     target: 'disabled',
-                    in: '#watch.alive.main.displays.out.alarm-1.on',
+                    in: '#alarm-1',
                   },
                 },
               },
@@ -263,7 +263,7 @@ const watchMachine = createMachine(
                 on: {
                   D_PRESSED: {
                     target: 'enabled',
-                    in: '#watch.alive.main.displays.out.alarm-2.off',
+                    in: '#alarm-2',
                   },
                 },
               },
@@ -271,7 +271,7 @@ const watchMachine = createMachine(
                 on: {
                   D_PRESSED: {
                     target: 'disabled',
-                    in: '#watch.alive.main.displays.out.alarm-2.on',
+                    in: '#alarm-2',
                   },
                 },
               },
@@ -284,7 +284,7 @@ const watchMachine = createMachine(
                 on: {
                   D_PRESSED: {
                     target: 'enabled.quiet',
-                    in: '#watch.alive.main.displays.out.chime.off',
+                    in: '#chime',
                   },
                 },
               },
@@ -308,7 +308,7 @@ const watchMachine = createMachine(
                 on: {
                   D_PRESSED: {
                     target: 'disabled',
-                    in: '#watch.alive.main.displays.out.chime.on',
+                    in: '#chime',
                   },
                 },
               },
@@ -372,7 +372,7 @@ const watchMachine = createMachine(
                             id: 'time',
                             on: {
                               A_PRESSED: {
-                                target: '#alarm-1.hist',
+                                target: '#alarm-1',
                               },
                               C_PRESSED: {
                                 target: '#wait',
@@ -581,35 +581,16 @@ const watchMachine = createMachine(
                     states: {
                       'alarm-1': {
                         id: 'alarm-1',
-                        initial: 'off',
-                        states: {
-                          hist: {
-                            type: 'history',
-                          },
-                          off: {
-                            on: {
-                              D_PRESSED: {
-                                target: 'on',
-                                actions: ['resetIdlenessTimer'],
-                              },
-                            },
-                          },
-                          on: {
-                            on: {
-                              D_PRESSED: {
-                                target: 'off',
-                                actions: ['resetIdlenessTimer'],
-                              },
-                            },
-                          },
-                        },
                         on: {
                           A_PRESSED: {
-                            target: 'alarm-2.hist',
+                            target: 'alarm-2',
                             actions: ['resetIdlenessTimer'],
                           },
                           C_PRESSED: {
                             target: 'update-1.hr',
+                            actions: ['resetIdlenessTimer'],
+                          },
+                          D_PRESSED: {
                             actions: ['resetIdlenessTimer'],
                           },
                         },
@@ -702,65 +683,28 @@ const watchMachine = createMachine(
                       },
                       'alarm-2': {
                         id: 'alarm-2',
-                        initial: 'off',
-                        states: {
-                          hist: {
-                            type: 'history',
-                          },
-                          off: {
-                            on: {
-                              D_PRESSED: {
-                                target: 'on',
-                                actions: ['resetIdlenessTimer'],
-                              },
-                            },
-                          },
-                          on: {
-                            on: {
-                              D_PRESSED: {
-                                target: 'off',
-                                actions: ['resetIdlenessTimer'],
-                              },
-                            },
-                          },
-                        },
                         on: {
                           A_PRESSED: {
-                            target: 'chime.hist',
+                            target: 'chime',
                             actions: ['resetIdlenessTimer'],
                           },
                           C_PRESSED: {
                             target: 'update-2.hr',
                             actions: ['resetIdlenessTimer'],
                           },
+                          D_PRESSED: {
+                            actions: ['resetIdlenessTimer'],
+                          },
                         },
                       },
                       chime: {
-                        initial: 'off',
-                        states: {
-                          hist: {
-                            type: 'history',
-                          },
-                          off: {
-                            on: {
-                              D_PRESSED: {
-                                target: 'on',
-                                actions: ['resetIdlenessTimer'],
-                              },
-                            },
-                          },
-                          on: {
-                            on: {
-                              D_PRESSED: {
-                                target: 'off',
-                                actions: ['resetIdlenessTimer'],
-                              },
-                            },
-                          },
-                        },
+                        id: 'chime',
                         on: {
                           A_PRESSED: {
                             target: '#stopwatch.hist',
+                          },
+                          D_PRESSED: {
+                            actions: ['resetIdlenessTimer'],
                           },
                         },
                       },
