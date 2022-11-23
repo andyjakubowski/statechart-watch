@@ -31,6 +31,7 @@ export const useKeyDown = function useKeyDown(send) {
           send('D_PRESSED');
           keysDown.d = true;
           break;
+        default:
       }
     };
     window.addEventListener('keydown', handleKeyDown);
@@ -58,6 +59,7 @@ export const useKeyUp = function useKeyUp(send) {
           send('D_RELEASED');
           keysDown.d = false;
           break;
+        default:
       }
     };
     window.addEventListener('keyup', handleKeyUp);
