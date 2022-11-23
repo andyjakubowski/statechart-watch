@@ -9,7 +9,23 @@ Built with [Create React App](https://github.com/facebook/create-react-app) and 
 ![Overview of the watch](src/assets/readme/intro.gif)
 ![Figure 31 from Harel’s paper](src/assets/figure_31.png)
 
-## What is it, _exactly_?
+## A few things to try in the [live demo](https://andyjakubowski.github.io/statechart-watch/):
+
+The live demo includes an image of the statechart. The arrows labeled `a`, `b`, `c`, and `d` represent the watch buttons, and show you which ones will navigate you to the different features of the watch.
+
+Try playing with the watch yourself, or try out some of the ideas below.
+
+You can press the `a`, `b`, `c`, and `d` buttons you see on the screen, or use the keyboard. You’ll be faster with the keyboard, so I recommend that if you’re device has one.
+
+- Press `d` to toggle between the current time and date.
+- Starting with the current time, press `a` 4 times to go to the stopwatch. Then, press `b` to start the stopwatch. With the stopwatch running, press `a` again to loop back to the current time. Note how the stopwatch icon is still visible on the watch display.
+- Hold down `b`. The display will light up 💡.
+- Hold down `b` and `d` at the same time. The watch should beep 🔊!
+- Press _Remove battery_ to transition the watch to the _dead_ state. Then press _Insert battery_ to start over.
+
+Have fun! 👩‍🔬
+
+## But what is it, _exactly_?
 
 Statecharts are a visual way of expressing complex behavior, like a watch or some really complicated piece of UI. XState is a library that lets you implement statecharts with JavaScript. This project uses XState to implement a statechart describing the behavior of a watch. And it uses React to let you see and interact with the watch.
 
