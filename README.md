@@ -1,13 +1,33 @@
 # Citizen Quartz Multi Alarm III
 
-Check out the live demo at https://andyjakubowski.github.io/statechart-watch/
+Make sure to play with the [**live demo**](https://andyjakubowski.github.io/statechart-watch/) of the watch! 💫
 
 A pretty exact replica of the Citizen Quartz Multi Alarm III watch based on figure 31 in David Harel’s 1987 [paper](https://www.sciencedirect.com/science/article/pii/0167642387900359) introducing statecharts.
 
-Built with [Create React App](https://github.com/facebook/create-react-app) and [XState](https://xstate.js.org/docs/).
+Built with [Create React App](https://github.com/facebook/create-react-app) and [XState](https://xstate.js.org/docs/). The live demo is deployed with GitHub Pages.
 
 ![Overview of the watch](src/assets/readme/intro.gif)
 ![Figure 31 from Harel’s paper](src/assets/figure_31.png)
+
+## What is it, _exactly_?
+
+Statecharts are a visual way of expressing complex behavior, like a watch or some really complicated piece of UI. XState is a library that lets you implement statecharts with JavaScript. This project uses XState to implement a statechart describing the behavior of a watch. And it uses React to let you see and interact with the watch.
+
+## Why should I care?
+
+Statecharts are the key to implement really complex behavior in a way that’s easy to understand and really hard to break. They let you express what should be possible, and when. It’s easy to understand _and_ precise, making it a great way to express how something should work in your project.
+
+Interactive devices and UIs have a surprising amount of complexity to them. This watch, for example, has a whole bunch of features:
+
+- The watch face lights up when you press and hold the `b` button.
+- The watch starts beeping if you press and hold `b` and `d` at the same time.
+- There are two alarms that can be enabled or disabled.
+- There’s a stopwatch.
+- If you start updating the date on the watch and don’t do anything for 2 minutes, the watch should go back to showing the current time.
+
+This is a lot of stuff to keep track of, especially when some of these features depend on _other features_ being on or off. If you’re not careful, you can easily end up with a complicated mess of conditional checks. The more complex the behavior you’re trying to represent, the harder it will get to maintain.
+
+Statecharts are an answer to this problem. They let you express those behaviors visually in a way that’s understandable for humans.
 
 ## What do I do with it?
 
