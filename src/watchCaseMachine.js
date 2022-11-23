@@ -209,6 +209,7 @@ const watchMachine = createMachine(
   {
     id: 'watch',
     initial: 'alive',
+    predictableActionArguments: true,
     context: {
       T: {
         sec: 50,
@@ -862,14 +863,12 @@ const watchMachine = createMachine(
                                   D_PRESSED: [
                                     {
                                       target: 'lap',
-                                      in:
-                                        '#watch.alive.main.displays.stopwatch.displayAndRun.run.on',
+                                      in: '#watch.alive.main.displays.stopwatch.displayAndRun.run.on',
                                       actions: ['saveStopwatchLap'],
                                     },
                                     {
                                       target: '#zero',
-                                      in:
-                                        '#watch.alive.main.displays.stopwatch.displayAndRun.run.off',
+                                      in: '#watch.alive.main.displays.stopwatch.displayAndRun.run.off',
                                     },
                                   ],
                                 },
@@ -1127,6 +1126,7 @@ export const watchCaseMachine = createMachine(
   {
     id: 'WatchCase',
     initial: 'alive',
+    predictableActionArguments: true,
     states: {
       dead: {
         on: {
